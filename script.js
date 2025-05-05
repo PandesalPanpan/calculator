@@ -1,3 +1,4 @@
+const ERRORMESSAGE = "INVALID";
 // Create a function for add, substract, multiply, divide
 
 function add(num1, num2)
@@ -17,6 +18,9 @@ function multiply(multiplicand, multiplier)
 
 function divide(dividend, divisor)
 {
+    // Check if the divisor is 0
+    if (+divisor == 0) return ERRORMESSAGE;
+
     return dividend / divisor;
 }
 
@@ -51,11 +55,20 @@ function operate(num1, operator, num2)
             result = divide(num1, num2);
             break;
         default:
-            return "Invalid Operator";
+            result = ERRORMESSAGE;
     }
-    result = +result.toFixed(8);
+    // Only if the result is not an error
+    if (typeof result == 'number') result = +result.toFixed(8);
+
     return result;
 }
+
+function clear() {
+    number1 = '';
+    number2 = '';
+    operator = '';
+    displayContent.textContent = '';
+} 
 
 // List of Operators and non-numbers
 const listOfOperators = ['+', '-', '*', '/'];
@@ -69,13 +82,7 @@ buttons.map(button => {
         // Special Buttons
         if (button.textContent === 'AC')
         {
-            button.addEventListener('click', () => {
-                // If AC is clicked, we want to reset everything
-                number1 = '';
-                number2 = '';
-                operator = '';
-                displayContent.textContent = '';
-            });
+            button.addEventListener('click', clear());
         } else {
             button.addEventListener('click', () => {
                 // Don't do anything if any of these are empty
@@ -91,7 +98,7 @@ buttons.map(button => {
         // Operators
         button.addEventListener('click', () => {
             console.log(button.textContent);
-            // Set the operator => Make the numbers be set to number2
+            // TODO: If we alraedy have an operator, calculate it
             operator = button.textContent;
 
         });
@@ -99,6 +106,11 @@ buttons.map(button => {
     else { 
         // Numbers Button
         button.addEventListener('click', () => {
+            // Check if we just got an error
+            if (displayContent.textContent == ERRORMESSAGE) {
+                clear();
+            }
+
             // If we have typed number1 and selected an operator
             // The next numbers should be saved on number2 variable and the new display
             if (number1 && operator) {
