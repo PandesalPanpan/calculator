@@ -53,7 +53,7 @@ function operate(num1, operator, num2)
         default:
             return "Invalid Operator";
     }
-
+    result = +result.toFixed(8);
     return result;
 }
 
