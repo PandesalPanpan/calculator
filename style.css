@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    width: 350px;
+    height: 450px;
+    gap: 25px
+}
+
+.calculator-display {
+    margin: 20px;
+    width: 250px;
+    height: 50px;
+    border: 1px solid black;
+}
