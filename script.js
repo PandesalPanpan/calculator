@@ -33,6 +33,8 @@ let number2 = '';
 function operate(num1, operator, num2)
 {
     let result;
+    num1 = +num1;
+    num2 = +num2;
     // Check what function to use depending on operator
     switch(operator)
     {
