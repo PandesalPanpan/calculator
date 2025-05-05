@@ -69,6 +69,10 @@ buttons.map(button => {
         if (button.textContent === 'AC')
         {
             button.addEventListener('click', () => {
+                // If AC is clicked, we want to reset everything
+                number1 = '';
+                number2 = '';
+                operator = '';
                 displayContent.textContent = '';
             });
         } else {
