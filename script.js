@@ -78,6 +78,9 @@ buttons.map(button => {
             });
         } else {
             button.addEventListener('click', () => {
+                // Don't do anything if any of these are empty
+                if (!number1 || !operator || !number2) return; 
+
                 number1 = operate(number1, operator, number2); // Allows to operate on the result
                 operator = '';
                 number2 = '';
