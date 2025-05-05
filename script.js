@@ -51,6 +51,8 @@ function operate(num1, operator, num2)
         default:
             return "Invalid Operator";
     }
+
+    return result;
 }
 
 // List of Operators and non-numbers
