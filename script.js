@@ -52,3 +52,33 @@ function operate(num1, operator, num2)
             return "Invalid Operator";
     }
 }
+
+// List of Operators and non-numbers
+const listOfOperators = ['+', '-', '*', '/'];
+const listOfSpecialButtons = ['AC', '='];
+
+// Select all buttons
+const buttons = Array.from(document.querySelectorAll('button'));
+const displayContent = document.querySelector('.calculator-display');
+buttons.map(button => {
+    // Check if its one of the operators TODO!s
+    if (listOfSpecialButtons.includes(button.textContent))
+    {
+        if (button.textContent === 'AC')
+        {
+            button.addEventListener('click', () => {
+                displayContent.textContent = '';
+            });
+        } else {
+            button.addEventListener('click', () => {
+                console.log(`Do operation on Num1: ${num1} operation ${operator }Num2: ${num2}`)
+            })
+        }
+    } else {
+        // Add event listener to add to the display
+        button.addEventListener('click', event => {
+            console.log(button.textContent);
+            displayContent.textContent += button.textContent;
+        });
+    }
+});
