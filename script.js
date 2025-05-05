@@ -78,7 +78,7 @@ buttons.map(button => {
         // Special Buttons
         if (button.textContent === 'AC')
         {
-            button.addEventListener('click', clear());
+            button.addEventListener('click', clear);
         } else {
             button.addEventListener('click', () => {
                 // Don't do anything if any of these are empty
