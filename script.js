@@ -63,9 +63,8 @@ const listOfSpecialButtons = ['AC', '='];
 const buttons = Array.from(document.querySelectorAll('button'));
 const displayContent = document.querySelector('.calculator-display');
 buttons.map(button => {
-    // Check if its one of the operators TODO!s
-    if (listOfSpecialButtons.includes(button.textContent))
-    {
+    if (listOfSpecialButtons.includes(button.textContent)) {
+        // Special Buttons
         if (button.textContent === 'AC')
         {
             button.addEventListener('click', () => {
@@ -77,14 +76,30 @@ buttons.map(button => {
             });
         } else {
             button.addEventListener('click', () => {
-                console.log(`Do operation on Num1: ${num1} operation ${operator }Num2: ${num2}`)
+                console.log(`Do operation on ${number1} ${operator} ${number2}`)
             })
         }
-    } else {
-        // Add event listener to add to the display
-        button.addEventListener('click', event => {
+    } else if (listOfOperators.includes(button.textContent)) {
+        // Operators
+        button.addEventListener('click', () => {
             console.log(button.textContent);
-            displayContent.textContent += button.textContent;
+            // Set the operator => Make the numbers be set to number2
+            operator = button.textContent;
+
+        });
+    } 
+    else { 
+        // Numbers Button
+        button.addEventListener('click', () => {
+            // If we have typed number1 and selected an operator
+            // The next numbers should be saved on number2 variable and the new display
+            if (number1 && operator) {
+                number2 += button.textContent;
+                displayContent.textContent = number2;
+            } else {
+                number1 += button.textContent;
+                displayContent.textContent = number1;
+            }
         });
     }
 });
