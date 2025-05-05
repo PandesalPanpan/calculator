@@ -78,7 +78,11 @@ buttons.map(button => {
             });
         } else {
             button.addEventListener('click', () => {
-                console.log(`Do operation on ${number1} ${operator} ${number2}`)
+                displayContent.textContent = operate(
+                    number1,
+                    operator,
+                    number2
+                );
             })
         }
     } else if (listOfOperators.includes(button.textContent)) {
