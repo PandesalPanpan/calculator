@@ -29,3 +29,26 @@ console.log(`divide(1,2) expect 0.5 => ${divide(1,2)}`);
 let number1;
 let operator;
 let number2;
+
+function operate(num1, operator, num2)
+{
+    let result;
+    // Check what function to use depending on operator
+    switch(operator)
+    {
+        case '+':
+            result = add(num1, num2)
+            break;
+        case '-':
+            result = substract(num1, num2)
+            break;
+        case '*':
+            result = multiply(num1, num2);
+            break;
+        case '/':
+            result = divide(num1, num2);
+            break;
+        default:
+            return "Invalid Operator";
+    }
+}
