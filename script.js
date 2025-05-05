@@ -78,11 +78,10 @@ buttons.map(button => {
             });
         } else {
             button.addEventListener('click', () => {
-                displayContent.textContent = operate(
-                    number1,
-                    operator,
-                    number2
-                );
+                number1 = operate(number1, operator, number2); // Allows to operate on the result
+                operator = '';
+                number2 = '';
+                displayContent.textContent = number1;
             })
         }
     } else if (listOfOperators.includes(button.textContent)) {
