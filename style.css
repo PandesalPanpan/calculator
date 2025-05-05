@@ -19,3 +19,25 @@ body {
     height: 50px;
     border: 1px solid black;
 }
+
+.calculator-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.calculator-buttons-numbers {
+    width: 240px;
+    height: 200px;
+}
+
+.calculator-buttons-operators {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.calculator button {
+    width: 70px;
+    height: 40px;
+}
