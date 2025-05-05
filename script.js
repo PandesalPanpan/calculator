@@ -26,9 +26,9 @@ console.log(`multiply(1,2) expect 2 => ${multiply(1,2)}`);
 console.log(`divide(1,2) expect 0.5 => ${divide(1,2)}`);
 
 // Calculator Consists of 2 Numbers and an Operator
-let number1;
-let operator;
-let number2;
+let number1 = '';
+let operator = '';
+let number2 = '';
 
 function operate(num1, operator, num2)
 {
