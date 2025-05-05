@@ -34,10 +34,14 @@ body {
 .calculator-buttons-operators {
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .calculator button {
+    width: 70px;
+    height: 40px;
+}
+
+.button-spacer {
     width: 70px;
     height: 40px;
 }
