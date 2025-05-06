@@ -1,8 +1,13 @@
 body {
+    margin: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #0d0e0e;
 }
+
+
 
 .calculator {
     display: flex;
